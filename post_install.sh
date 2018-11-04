@@ -16,3 +16,18 @@ certbot --quiet certonly --standalone --agree-tos --email garorobe@gmail.com -w 
 
 sysrc "nginx_enable=YES"
 service nginx restart
+
+echo 10.10.100.1        router.garorobe.win >> /etc/hosts
+echo 10.10.100.200      freenas.garorobe.win >> /etc/hosts
+echo 10.10.100.250      plex.garorobe.win >> /etc/hosts
+echo 10.10.100.250      cloud.garorobe.win >> /etc/hosts
+echo 10.10.100.250      sonarr.garorobe.win >> /etc/hosts
+echo 10.10.100.250      jackett.garorobe.win >> /etc/hosts
+echo 10.10.100.250      gitlab.garorobe.win >> /etc/hosts
+echo 10.10.100.250      transmission.garorobe.win >> /etc/hosts
+echo 10.10.100.250      radarr.garorobe.win >> /etc/hosts
+echo 10.10.100.250      lidarr.garorobe.win >> /etc/hosts
+echo 10.10.100.250      sadpanda.garorobe.win >> /etc/hosts
+
+sysrc "dnsmasq_enable=YES"
+service dnsmasq restart
